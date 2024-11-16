@@ -21,6 +21,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	i = 0;
 	s = src;
 	d = dst;
+	if (!dst && !src)
+		return (NULL);
 	if (s > d)
 	{
 		while (i < n)
@@ -38,4 +40,15 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 		}
 	}
 	return (dst);
+}
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char *s = NULL;
+	char *d = NULL;
+
+	ft_memmove(d,s,2);
+
+	printf("%s\n",d);
 }

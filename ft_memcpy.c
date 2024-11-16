@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	s = src;
 	d = dst;
+	if (!dst && !src)
+		return NULL;
 	while (i < n)
 	{
 		d[i] = s[i];
@@ -28,3 +30,12 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
+// #include <string.h>
+// #include <stdio.h>
+// int main ()
+// {
+// 	char *x = NULL;
+// 	char *y = NULL;
+	
+// 	printf("%s",ft_memcpy(x,y,2));
+// }
