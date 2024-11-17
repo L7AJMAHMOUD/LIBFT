@@ -24,13 +24,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	if (!dst && !src)
 		return (NULL);
 	if (s > d)
-	{
-		while (i < n)
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
+		ft_memcpy(dst, src, n);
 	else
 	{
 		while (n > 0)
@@ -40,15 +34,4 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 		}
 	}
 	return (dst);
-}
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-	char *s = NULL;
-	char *d = NULL;
-
-	ft_memmove(d,s,2);
-
-	printf("%s\n",d);
 }

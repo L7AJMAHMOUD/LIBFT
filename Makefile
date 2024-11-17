@@ -22,6 +22,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@echo "Objects FIles ARchIvED SUccefuLLy TO $(NAME)"
 	@$(ARCHIVE) $(NAME) $(OBJS)
+%.o: %.c libft.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@echo "ClEaNeD"
@@ -33,5 +35,3 @@ fclean:
 
 re: fclean all
 	@echo " THe ProjECt is SUccefuLLy CleANed & ReMAkeD __"
-
-# modification timestamps

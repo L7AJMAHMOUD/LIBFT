@@ -31,20 +31,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (tab1[i] - tab2[i]);
 }
-// #include <stdio.h>
-// #include <string.h>
-// int main()
-// {
-// 	char *s1 = "\xff\0\0\xaa\0\xde\xffMACOSX\xff";
-//     char *s2 = "\xff\0\0\xaa\0\xde\x00MBS";
-//     size_t size = 9;
-//     int i1 = memcmp(s1, s2, size);
-//     int i2 = ft_memcmp(s1, s2, size);
- 
-//     if (i1 == i2)
-// 		printf("succes\n");
-// 	else
-// 		printf("fail\n");
-// 	printf("ft = %d\n",i2);
-// 	printf("mem = %d\n",i1);
-// }
