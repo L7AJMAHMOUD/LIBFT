@@ -37,7 +37,7 @@ char	*ft_itoa(int n)
 
 	nb = n;
 	l = len (nb) + 1;
-	str = (char *)ft_calloc(l, sizeof(char));
+	str = ft_calloc(l, sizeof(char));
 	if (!str)
 		return (NULL);
 	if (nb < 0)

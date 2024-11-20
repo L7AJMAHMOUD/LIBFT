@@ -17,9 +17,9 @@ char	*ft_strnstr(const char *str, const char *substr, size_t len)
 	size_t	i;
 	size_t	j;
 
+	i = 0;
 	if (substr[0] == '\0')
 		return ((char *)str);
-	i = 0;
 	while (str[i])
 	{
 		j = 0;

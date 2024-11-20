@@ -25,18 +25,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-// #include <stdio.h>
-// #include <string.h>
-// int main()
-// {
-// 	char tab[] = "";
-// 	char *p = ft_strrchr(tab,'\0');
-// 	char *f = strrchr(tab,'\0');
-
-// 	if(p == f)
-// 		printf("SUCCESS\n");
-// 	else
-// 		printf("FAILURE\n");
-// 	printf("%s\n",p);
-// 	printf("%s\n",f);
-// }

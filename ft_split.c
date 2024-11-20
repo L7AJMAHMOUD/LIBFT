@@ -40,7 +40,7 @@ static char	**double_array(int words)
 {
 	char	**p;
 
-	p = (char **)malloc((words + 1) * sizeof(char *));
+	p = malloc((words + 1) * sizeof(char *));
 	if (!p)
 		return (NULL);
 	return (p);
@@ -84,7 +84,7 @@ char	**ft_split(char const *s, char c)
 		while (s[pos] == c)
 			pos++;
 		len_w = ln((char *)&s[pos], c);
-		k[i] = (char *)malloc((len_w + 1) * sizeof(char));
+		k[i] = malloc((len_w + 1) * sizeof(char));
 		if (!k[i])
 			return (free_alocation(k));
 		ft_strlcpy(k[i], &s[pos], len_w + 1);

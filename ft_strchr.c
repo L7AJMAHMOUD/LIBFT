@@ -22,9 +22,9 @@ char	*ft_strchr(const char *s, int c)
 	while (i < ft_strlen(s))
 	{
 		if (s[i] == (char)c)
-			return ((char *)(s + i));
+			return ((char *)&s[i]);
 		else if (s[i + 1] == '\0' && (char)c == '\0')
-			return ((char *)(s + i + 1));
+			return ((char *)&s[i + 1]);
 		i++;
 	}
 	return (NULL);

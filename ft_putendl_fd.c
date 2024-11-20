@@ -16,7 +16,7 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 
-	if (!s || fd == -1)
+	if (!s || fd < 0)
 		return ;
 	i = 0;
 	while (s[i])

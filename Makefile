@@ -22,6 +22,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@echo "Objects FIles ARchIvED SUccefuLLy TO $(NAME)"
 	@$(ARCHIVE) $(NAME) $(OBJS)
+
+
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
