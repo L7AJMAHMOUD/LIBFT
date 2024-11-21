@@ -67,16 +67,6 @@ static int	count_word(char *s, char c)
 	return (count);
 }
 
-static char	**double_array(int words)
-{
-	char	**p;
-
-	p = malloc((words + 1) * sizeof(char *));
-	if (!p)
-		return (NULL);
-	return (p);
-}
-
 char	**ft_split(char const *s, char c)
 {
 	int		words;
