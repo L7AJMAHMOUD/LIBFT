@@ -17,18 +17,22 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dl;
 	size_t	sl;
 	size_t	a;
+	size_t	b;
 
 	a = 0;
-	dl = ft_strlen(dst);
+	b = 0;
 	sl = ft_strlen(src);
+	while (dst[b])
+		b++;
+	dl = b;
 	if (size == 0 || size <= dl)
 		return (size + sl);
 	while (src[a] && a < size - dl - 1)
 	{
-		dst[dl] = src[a];
+		dst[b] = src[a];
 		a++;
-		dl++;
+		b++;
 	}
-	dst[dl] = '\0';
+	dst[b] = '\0';
 	return (dl + sl);
 }

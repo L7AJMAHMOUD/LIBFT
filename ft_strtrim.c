@@ -19,9 +19,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	start = 0;
 	i = 0;
-	len = ft_strlen (s1) - 1;
 	if (!s1 || !set)
 		return (NULL);
+	len = ft_strlen (s1) - 1;
 	if ((ft_strlen(s1) == 0 && ft_strlen(set) == 0))
 		return (ft_strdup(""));
 	while (s1[start] && ft_strchr(set, s1[start]) != NULL)

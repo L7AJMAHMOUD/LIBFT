@@ -67,6 +67,16 @@ static int	count_word(char *s, char c)
 	return (count);
 }
 
+static char	**double_array(int words)
+{
+	char	**p;
+
+	p = malloc((words + 1) * sizeof(char *));
+	if (!p)
+		return (NULL);
+	return (p);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		words;
@@ -75,6 +85,8 @@ char	**ft_split(char const *s, char c)
 	int		pos;
 	char	**k;
 
+	if (!s)
+		return (NULL);
 	words = count_word((char *)s, c);
 	pos = 0;
 	i = 0;
@@ -95,3 +107,11 @@ char	**ft_split(char const *s, char c)
 	k[i] = NULL;
 	return (k);
 }
+// #include <libc.h>
+// int main ()
+// {
+// 	char **result = ft_split("HEllo",' ');
+// 	printf("%s\n",result[0]);
+// 	printf("%s\n",result[1]);
+// 	// printf("%s",result[2]);
+// }

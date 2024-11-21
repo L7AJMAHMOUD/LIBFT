@@ -19,10 +19,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	sub_len;
 	char			*substr;
 
-	i = 0;
-	s_len = ft_strlen(s);
 	if (!s)
 		return (NULL);
+	i = 0;
+	s_len = ft_strlen(s);
 	if (start >= s_len)
 		return (ft_strdup(""));
 	sub_len = s_len - start;
