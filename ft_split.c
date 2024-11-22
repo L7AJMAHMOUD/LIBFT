@@ -72,36 +72,26 @@ char	**ft_split(char const *s, char c)
 	int		words;
 	int		i;
 	int		len_w;
-	int		pos;
 	char	**k;
 
 	if (!s)
 		return (NULL);
 	words = count_word((char *)s, c);
-	pos = 0;
 	i = 0;
 	k = double_array(words);
 	while (i < words)
 	{
-		while (s[pos] == c)
-			pos++;
-		len_w = ln((char *)&s[pos], c);
+		while (*s == c)
+			s++;
+		len_w = ln((char *)s, c);
 		k[i] = malloc((len_w + 1) * sizeof(char));
 		if (!k[i])
 			return (free_alocation(k));
-		ft_strlcpy(k[i], &s[pos], len_w + 1);
+		ft_strlcpy(k[i], s, len_w + 1);
 		k[i][len_w] = '\0';
-		pos = pos + len_w;
+		s = s + len_w;
 		i++;
 	}
 	k[i] = NULL;
 	return (k);
 }
-// #include <libc.h>
-// int main ()
-// {
-// 	char **result = ft_split("HEllo",' ');
-// 	printf("%s\n",result[0]);
-// 	printf("%s\n",result[1]);
-// 	// printf("%s",result[2]);
-// }
