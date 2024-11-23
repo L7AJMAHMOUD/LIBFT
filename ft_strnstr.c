@@ -20,6 +20,8 @@ char	*ft_strnstr(const char *str, const char *substr, size_t len)
 	i = 0;
 	if (substr[0] == '\0')
 		return ((char *)str);
+	if (!str && substr && len == 0)
+		return (NULL);
 	while (str[i])
 	{
 		j = 0;
