@@ -77,9 +77,11 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	words = count_word((char *)s, c);
-	i = 0;
+	i = -1;
 	k = double_array(words);
-	while (i < words)
+	if (!k)
+		return (NULL);
+	while (++i < words)
 	{
 		while (*s == c)
 			s++;
@@ -90,8 +92,6 @@ char	**ft_split(char const *s, char c)
 		ft_strlcpy(k[i], s, len_w + 1);
 		k[i][len_w] = '\0';
 		s = s + len_w;
-		i++;
 	}
-	k[i] = NULL;
-	return (k);
+	return (k[i] = NULL, k);
 }
