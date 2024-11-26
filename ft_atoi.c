@@ -21,6 +21,13 @@ static int	check(size_t n, int r)
 	return (1);
 }
 
+static int	check_2(int s, size_t m, char c)
+{
+	if (s == 20 && m >= 1844674407370955161 && (c + 48) > 6)
+		return (0);
+	return (1);
+}
+
 int	ft_atoi(const char *str)
 {
 	int		i;
@@ -37,11 +44,11 @@ int	ft_atoi(const char *str)
 	if (str[i] == '-' || str[i] == '+')
 		if (str[i++] == '-')
 			r = -1;
-	while ('0' <= str[i] && str[i] <= '9' && ++s)
+	while ('0' <= str[i] && str[i] <= '9')
 	{
-		if (s == 20 && m >= 1844674407370955161
-			&& '6' <= str[i] && str[i] <= '9')
-			return (-1);
+		s++;
+		if (!check_2(s, m, str[i]))
+			return (check(9223372036854775809ULL, r));
 		m = m * 10 + str[i++] - '0';
 		if (check(m, r) == -1 || check(m, r) == 0)
 			return (check(m, r));
